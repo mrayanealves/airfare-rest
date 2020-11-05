@@ -21,7 +21,7 @@ public class SwaggerConfig {
         TypeResolver typeResolver = new TypeResolver();
         return new Docket( DocumentationType.SWAGGER_2)
                 .select()
-                .apis( RequestHandlerSelectors.basePackage("com.api.dev"))
+                .apis( RequestHandlerSelectors.basePackage("com.airline"))
                 .paths( PathSelectors.any())
                 .build();
     }

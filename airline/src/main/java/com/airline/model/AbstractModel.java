@@ -1,5 +1,6 @@
 package com.airline.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -25,6 +26,7 @@ public abstract class AbstractModel implements Serializable {
 
     public abstract void setId(Long id);
 
+    @JsonIgnore
     public Date getDataCriacao() {
         return dataCriacao;
     }

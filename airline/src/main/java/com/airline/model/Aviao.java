@@ -1,13 +1,15 @@
 package com.airline.model;
 
-
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
+import java.util.List;
 
 @Entity
 @Table(name = "aviao")
@@ -19,6 +21,9 @@ public class Aviao extends AbstractModel {
 
     @NotBlank(message = "Código não pode ser nulo ou vazio.")
     private String codigo;
+
+    @OneToMany(mappedBy = "aviao", cascade = CascadeType.ALL)
+    private List<Assento> assentos;
 
     @Override
     public Long getId() {
@@ -36,5 +41,14 @@ public class Aviao extends AbstractModel {
 
     public void setCodigo(String codigo) {
         this.codigo = codigo;
+    }
+
+    public List<Assento> getAssentos() {
+        return assentos;
+    }
+
+    public void setAssentos(List<Assento> assentos) {
+        assentos.forEach( assento -> assento.setAviao( this ) );
+        this.assentos = assentos;
     }
 }

@@ -1,5 +1,7 @@
 package com.airline.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -21,6 +23,7 @@ public class Assento extends AbstractModel {
     @NotBlank(message = "Código não pode ser nulo ou vazio.")
     private String codigo;
 
+    @JsonIgnore
     @ManyToOne(optional = false)
     @JoinColumn(name = "id_aviao")
     private Aviao aviao;
