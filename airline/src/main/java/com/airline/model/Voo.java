@@ -8,10 +8,12 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
 import javax.validation.constraints.NotBlank;
 
 @Entity
-@Table(name = "voo")
+@Table(name = "voo",
+        uniqueConstraints={@UniqueConstraint(columnNames = {"data" , "id_aviao"})})
 public class Voo extends AbstractModel {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SEQ_VOO")
