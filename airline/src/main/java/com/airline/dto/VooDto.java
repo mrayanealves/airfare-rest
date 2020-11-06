@@ -4,10 +4,10 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
 public class VooDto extends AbstractDto{
-    @NotBlank(message = "Data não pode ser nulo ou vazio.")
+    @NotBlank(message = "Data não pode ser nula ou vazia.")
     private String data;
 
-    @NotNull
+    @NotNull(message = "Avião não pode ser nulo ou vazio.")
     private AviaoDto aviao;
 
     public String getData() {
