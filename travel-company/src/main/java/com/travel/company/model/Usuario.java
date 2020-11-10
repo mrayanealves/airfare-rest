@@ -14,12 +14,12 @@ public class Usuario extends AbstractModel {
     @NotBlank(message = "Nome não pode ser nulo nem vazio.")
     private String nome;
 
+    @NotBlank(message = "CPF não pode ser nulo ou vazio.")
+    private String cpf;
+
     @NotBlank(message = "Email não pode ser nulo nem vazio.")
     @Column(unique = true)
     private String email;
-
-    @NotBlank(message = "Senha não pode ser nula nem vazia.")
-    private String senha;
 
     @Override
     public Long getId() {
@@ -39,19 +39,19 @@ public class Usuario extends AbstractModel {
         this.nome = nome;
     }
 
+    public String getCpf() {
+        return cpf;
+    }
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
+
     public String getEmail() {
         return email;
     }
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public String getSenha() {
-        return senha;
-    }
-
-    public void setSenha(String senha) {
-        this.senha = senha;
     }
 }
