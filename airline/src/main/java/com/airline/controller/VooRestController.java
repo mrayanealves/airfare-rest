@@ -15,7 +15,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("voo")
-public class VooController extends AbstractRestController<Voo, VooDto>{
+public class VooRestController extends AbstractRestController<Voo, VooDto>{
     @Autowired
     private VooService service;
 

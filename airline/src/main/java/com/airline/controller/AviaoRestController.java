@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("aviao")
-public class AviaoController extends AbstractRestController<Aviao, AviaoDto> {
+public class AviaoRestController extends AbstractRestController<Aviao, AviaoDto> {
     @Autowired
     private AviaoService service;
 
