@@ -11,8 +11,8 @@ public class UsuarioDto extends AbstractDto {
     @Column(unique = true)
     private String email;
 
-    @NotBlank(message = "Senha deve ser informada.")
-    private String senha;
+    @NotBlank(message = "CPF deve ser informado.")
+    private String cpf;
 
     public String getNome() {
         return nome;
@@ -30,11 +30,11 @@ public class UsuarioDto extends AbstractDto {
         this.email = email;
     }
 
-    public String getSenha() {
-        return senha;
+    public String getCpf() {
+        return cpf;
     }
 
-    public void setSenha(String senha) {
-        this.senha = senha;
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
     }
 }
