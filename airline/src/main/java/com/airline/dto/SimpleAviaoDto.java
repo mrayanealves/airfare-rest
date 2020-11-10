@@ -2,7 +2,7 @@ package com.airline.dto;
 
 import javax.validation.constraints.NotBlank;
 
-public class AviaoPesquisaDto extends AbstractDto {
+public class SimpleAviaoDto extends AbstractDto {
     @NotBlank(message = "Código deve ser informado.")
     private String codigo;
 

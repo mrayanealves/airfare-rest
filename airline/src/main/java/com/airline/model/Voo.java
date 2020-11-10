@@ -20,8 +20,14 @@ public class Voo extends AbstractModel {
     @SequenceGenerator(name = "SEQ_VOO", sequenceName = "id_seq_voo", allocationSize = 1)
     private Long id;
 
-    @NotBlank(message = "Data não pode ser nulo ou vazio.")
+    @NotBlank(message = "Data não pode ser nula ou vazia.")
     private String data;
+
+    @NotBlank(message = "Origem não pode ser nulo ou vazio.")
+    private String origem;
+
+    @NotBlank(message = "Origem não pode ser nulo ou vazio.")
+    private String destino;
 
     @ManyToOne(optional = false)
     @JoinColumn(name = "id_aviao")
@@ -43,6 +49,22 @@ public class Voo extends AbstractModel {
 
     public void setData(String data) {
         this.data = data;
+    }
+
+    public String getOrigem() {
+        return origem;
+    }
+
+    public void setOrigem(String origem) {
+        this.origem = origem;
+    }
+
+    public String getDestino() {
+        return destino;
+    }
+
+    public void setDestino(String destino) {
+        this.destino = destino;
     }
 
     public Aviao getAviao() {

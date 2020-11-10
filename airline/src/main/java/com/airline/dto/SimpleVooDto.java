@@ -1,9 +1,9 @@
 package com.airline.dto;
 
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
+import java.util.List;
 
-public class VooDto extends AbstractDto{
+public class SimpleVooDto extends AbstractDto {
     @NotBlank(message = "Data não pode ser nula ou vazia.")
     private String data;
 
@@ -13,8 +13,9 @@ public class VooDto extends AbstractDto{
     @NotBlank(message = "Origem não pode ser nulo ou vazio.")
     private String destino;
 
-    @NotNull(message = "Avião não pode ser nulo ou vazio.")
-    private AviaoDto aviao;
+    private SimpleAviaoDto aviao;
+
+    private List<AssentoDto> assentosDisponiveis;
 
     public String getData() {
         return data;
@@ -40,11 +41,19 @@ public class VooDto extends AbstractDto{
         this.destino = destino;
     }
 
-    public AviaoDto getAviao() {
+    public SimpleAviaoDto getAviao() {
         return aviao;
     }
 
-    public void setAviao(AviaoDto aviao) {
+    public void setAviao(SimpleAviaoDto aviao) {
         this.aviao = aviao;
+    }
+
+    public List<AssentoDto> getAssentosDisponiveis() {
+        return assentosDisponiveis;
+    }
+
+    public void setAssentosDisponiveis(List<AssentoDto> assentosDisponiveis) {
+        this.assentosDisponiveis = assentosDisponiveis;
     }
 }
